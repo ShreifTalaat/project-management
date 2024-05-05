@@ -1,0 +1,35 @@
+.user-list-container {
+    margin-top: 20px;
+  }
+  
+  .section-title {
+    margin-bottom: 10px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .user-table th {
+    text-align: left;
+    background-color: #f0f0f0;
+  }
+  
+  .user-item td {
+    text-align: left;
+  }
+  
+  .loading,
+  .error,
+  .no-users {
+    margin-top: 20px;
+    text-align: center;
+  }
+  

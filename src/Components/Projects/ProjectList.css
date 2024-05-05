@@ -1,0 +1,35 @@
+.project-list-container {
+    margin-top: 20px;
+  }
+  
+  .section-title {
+    margin-bottom: 10px;
+  }
+  
+  .project-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .project-table th,
+  .project-table td {
+    padding: 8px 16px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .project-table th {
+    text-align: left;
+    background-color: #f0f0f0;
+  }
+  
+  .project-item td {
+    text-align: left;
+  }
+  
+  .loading,
+  .error,
+  .no-projects {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
