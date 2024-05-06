@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchTasks } from '../../api/api';
+import { fetchTasks } from '../../api/api'; // Import fetchTasks
 import { Grid, Typography, CircularProgress, Paper } from '@mui/material'; 
 
 function TaskList() {
@@ -12,12 +12,12 @@ function TaskList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetchTasks(projectId);
+        const response = await fetchTasks(projectId); // Use fetchTasks
         setTasks(response.data);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching tasks:', error);
-        setError('Error fetching tasks. Please try again later.');
+        console.error('No tasks yet:', error);
+        setError('Not tasks yet.');
         setLoading(false);
       }
     };

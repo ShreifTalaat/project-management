@@ -14,19 +14,18 @@ import AddUserForm from './Components/Users/AddUserForm';
 import ProjectList from './Components/Projects/ProjectList';
 import AddProjectForm from './Components/Projects/AddProjectForm';
 import AddTaskToProject from './Components/Tasks/AddTaskToProject';
-import TaskList from './Components/Tasks/TaskList';
+import TaskList from './Components/Tasks/TaskList'; // Import TaskList component
 import Login from './Components/Auth/Login';
 import Logout from './Components/Auth/Logout';
 import { fetchProjects, fetchTasks, addTask } from './api/api';
 import HomePage from './Components/Home/HomePage';
-import cors from 'cors'; // Import the CORS middleware
-
 function App() {
+
   const [users, setUsers] = useState([]);
   const [projects, setProjects] = useState([]);
   const [tasks, setTasks] = useState([]);
-  const [userRefreshKey, setUserRefreshKey] = useState(0);
-  const [projectRefreshKey, setProjectRefreshKey] = useState(0);
+  const [userRefreshKey, setUserRefreshKey] = useState(0); // Refresh key for user list
+  const [projectRefreshKey, setProjectRefreshKey] = useState(0); // Added to manage project list refreshing
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -41,6 +40,7 @@ function App() {
 
     fetchData();
 
+    // Check if user is logged in
     const token = localStorage.getItem('token');
     setIsLoggedIn(!!token);
 
@@ -68,16 +68,16 @@ function App() {
   const handleAddTask = async (taskData) => {
     try {
       await addTask(taskData);
-      fetchTasksData(taskData.projectId);
+      fetchTasksData(taskData.projectId); // Fetch tasks again after adding a new task
     } catch (error) {
       console.error('Error adding task:', error);
     }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    setIsLoggedIn(false);
-    window.location.href = '/login';
+    localStorage.removeItem('token'); // Clear the authentication token
+    setIsLoggedIn(false); // Update isLoggedIn state
+    window.location.href = '/login'; // Navigate to the login page
   };
 
   return (
@@ -111,7 +111,7 @@ function App() {
                   <Route path="/logout" element={<Logout />} />
                 </>
               )}
-              <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
+              <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} /> {/* Pass setIsLoggedIn to Login component */}
               <Route path="/*" element={<Navigate to="/" />} />
             </Routes>
           </Box>
