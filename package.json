@@ -42,7 +42,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://ShreifTalaat.github.io/project-management",
   "browserslist": {
     "production": [
       ">0.2%",
