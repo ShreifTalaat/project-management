@@ -17,6 +17,7 @@
     "auth": "^1.0.2",
     "axios": "^1.6.8",
     "browserify-url": "^0.0.1",
+    "cors": "^2.8.5",
     "crypto-js": "^4.2.0",
     "date-fns": "^3.6.0",
     "gh-pages": "^6.1.1",
