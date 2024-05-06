@@ -1,10 +1,8 @@
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
-import { Description as DescriptionIcon, Home as HomeIcon } from '@mui/icons-material';
-import projectman from '../../assets/Images/iStock-1135541613.webp'; // Updated import path
+import projectman from '../../assets/Images/iStock-1135541613.webp'; 
 
 function HomePage({ isLoggedIn }) {
   return (

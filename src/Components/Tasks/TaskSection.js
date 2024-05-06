@@ -23,7 +23,7 @@ function TaskSection({ onAdd }) {
 
   const handleTaskAdd = (newTask) => {
     setTasks([...tasks, newTask]);
-    setRefreshKey((prevKey) => prevKey + 1); // Trigger refresh
+    setRefreshKey((prevKey) => prevKey + 1); 
   };
 
   return (
