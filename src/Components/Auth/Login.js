@@ -51,20 +51,21 @@ function Login({ setIsLoggedIn }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    setIsLoggedIn(true);
     try {
       const response = await login(formData);
       if (response.status === 200) {
         localStorage.setItem('token', response.data.token);
+        setIsLoggedIn(true); // Update isLoggedIn only on successful login
         navigate('/home');
-      } else if(response.status===400) {
-        setError('Invalid Passowrd or Username');
+      } else if(response.status === 400) {
+        setError('Invalid Password or Username');
       }
     } catch (error) {
-      setError('Invalid Passowrd or Username');
+      setError('Invalid Password or Username');
     }
     setIsLoading(false);
   };
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
